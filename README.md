@@ -17,12 +17,28 @@ Make sure you have Python 3 installed. Then, install the required packages:
 pip install -r requirements.txt
 ```
 
-### 2. Configure Credentials
-Copy the `.env.example` file to a new file named `.env`:
+### 2. Configure Credentials (Gmail App Password)
+Google requires you to use an "App Password" to send emails via scripts, rather than your normal Google account password.
+
+**How to get an App Password:**
+1. Go to your Google Account > **Security** tab.
+2. Under "How you sign in to Google", ensure **2-Step Verification** is turned ON.
+3. Once 2-Step Verification is enabled, search for **App passwords** in the security settings search bar.
+4. Name your app (e.g., "Python Bulk Emailer") and click **Create**.
+5. Google will provide a 16-character password (e.g., `abcd efgh ijkl mnop`).
+
+**Set up your `.env` file:**
+Copy the provided `.env.example` file to a new file named `.env`:
 ```bash
 cp .env.example .env
 ```
-Open `.env` and fill in your Gmail credentials. **Note:** You must use an [App Password](https://myaccount.google.com/apppasswords), not your regular Gmail password.
+Open `.env` and fill in your details:
+```env
+GMAIL_USER=your_email@gmail.com
+GMAIL_APP_PASSWORD=abcdefghijklmnop
+EMAIL_SUBJECT=Your Email Subject Here
+```
+*(Remove the spaces from the 16-character app password when pasting it into the `.env` file)*
 
 ### 3. Add Recipients
 Create a file named `recipients.csv` in the root directory (you can use `recipients.example.csv` as a template). 
