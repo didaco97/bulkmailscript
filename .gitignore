@@ -1,0 +1,6 @@
+.env
+e_cell_members_verified.csv
+recipients.csv
+send_log.txt
+__pycache__/
+*.pyc
